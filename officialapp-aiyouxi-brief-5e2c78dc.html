@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 产品说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f5f3f0;
+      color: #2c2b28;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", system-ui, sans-serif;
+      line-height: 1.7;
+      letter-spacing: 0.012em;
+    }
+
+    /* ===== 深色头图 ===== */
+    .hero {
+      background: linear-gradient(145deg, #1f2a33 0%, #1b242c 100%);
+      color: #eae7e2;
+      padding: 5rem 2rem 4.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 3.2rem;
+      background: #f5f3f0;
+      clip-path: ellipse(70% 100% at 50% 100%);
+      opacity: 0.9;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      margin-bottom: 1.2rem;
+      color: #f0ebe4;
+      word-break: break-word;
+    }
+
+    .hero p {
+      max-width: 640px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #c6c1b9;
+      line-height: 1.8;
+    }
+
+    .hero .tagline {
+      display: inline-block;
+      margin-top: 1.8rem;
+      padding: 0.4rem 1.2rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 40px;
+      font-size: 0.9rem;
+      color: #d7d2c9;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    /* ===== 浅色正文区 ===== */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2.8rem 1.8rem 4rem;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 470;
+      margin-bottom: 1.6rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #dad6ce;
+      color: #2c2b28;
+    }
+
+    .section-sub {
+      font-size: 1rem;
+      color: #5d5a55;
+      margin-top: -0.6rem;
+      margin-bottom: 2rem;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem 1.8rem;
+      margin-bottom: 2.8rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 1.8rem 1.6rem 2rem;
+      flex: 1 1 240px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03), 0 2px 4px rgba(0, 0, 0, 0.02);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin-bottom: 0.8rem;
+      color: #1b242c;
+    }
+
+    .card p {
+      font-size: 0.98rem;
+      color: #4a4742;
+      line-height: 1.7;
+    }
+
+    .highlight {
+      background: #f9f7f4;
+      border-left: 4px solid #b67a4b;
+      padding: 1.4rem 1.6rem;
+      border-radius: 0 16px 16px 0;
+      margin-bottom: 2.4rem;
+    }
+
+    .highlight p {
+      margin-bottom: 0.6rem;
+    }
+
+    .highlight p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ===== 强调色链接 ===== */
+    a {
+      color: #b67a4b;
+      text-decoration: none;
+      font-weight: 460;
+      transition: color 0.15s ease, border-bottom 0.1s ease;
+      border-bottom: 1px solid transparent;
+    }
+
+    a:hover {
+      color: #906237;
+      border-bottom: 1px solid #b67a4b;
+    }
+
+    .inline-link {
+      color: #b67a4b;
+    }
+
+    /* 使用场景卡片中的列表 */
+    .use-list {
+      margin-top: 0.6rem;
+      padding-left: 1.2rem;
+      list-style: disc outside;
+      color: #4a4742;
+      font-size: 0.98rem;
+      line-height: 1.8;
+    }
+
+    .use-list li {
+      margin-bottom: 0.25rem;
+    }
+
+    .faq-item {
+      margin-bottom: 1.8rem;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 500;
+      font-size: 1.05rem;
+      margin-bottom: 0.3rem;
+      color: #2c2b28;
+    }
+
+    .faq-item p {
+      color: #4a4742;
+      font-size: 0.98rem;
+      margin-left: 0.2rem;
+    }
+
+    .footnote {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid #dad6ce;
+      font-size: 0.9rem;
+      color: #7a7670;
+      text-align: center;
+    }
+
+    .footnote a {
+      color: #7a7670;
+      border-bottom: 1px solid transparent;
+    }
+
+    .footnote a:hover {
+      color: #b67a4b;
+      border-bottom: 1px solid #b67a4b;
+    }
+
+    /* ===== 响应式细节 ===== */
+    @media (max-width: 680px) {
+      .hero {
+        padding: 3.5rem 1.2rem 3rem;
+      }
+      .hero h1 {
+        font-size: 2.0rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .container {
+        padding: 2rem 1rem 3rem;
+      }
+      .card {
+        flex: 1 1 100%;
+        padding: 1.4rem 1.2rem 1.6rem;
+      }
+      .card-grid {
+        gap: 1.2rem;
+      }
+      .highlight {
+        padding: 1rem 1.2rem;
+      }
+      .section-title {
+        font-size: 1.4rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 深色头图 -->
+  <header class="hero">
+    <h1>资料整理 · 信息索引</h1>
+    <p>把零散的游戏资料、笔记与链接收进一处，<br>按自己的节奏翻阅、查找、更新。</p>
+    <span class="tagline">面向日常 · 轻量整理</span>
+  </header>
+
+  <!-- 正文区 -->
+  <main class="container">
+
+    <!-- 摘要卡片区 -->
+    <section>
+      <h2 class="section-title">摘要</h2>
+      <p class="section-sub">一份围绕游戏资料整理的轻索引工具，既不是平台也不是商店。</p>
+      <div class="card-grid">
+        <div class="card">
+          <h3>📁 信息收纳</h3>
+          <p>把攻略、背景、设定、更新日志等零散内容按主题归类，不用再翻几十个书签和聊天记录。</p>
+        </div>
+        <div class="card">
+          <h3>📌 个人索引</h3>
+          <p>自己决定哪些资料值得保留，哪些可以归档。只收录对你真正有用的内容，避免信息过载。</p>
+        </div>
+        <div class="card">
+          <h3>📎 链接备忘</h3>
+          <p>在卡片或笔记里嵌入原始链接、截图编号、参考来源，方便回溯和交叉查找。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 亮点 -->
+    <section>
+      <h2 class="section-title">几个值得留意的亮点</h2>
+      <ul class="use-list" style="margin-bottom: 2rem;">
+        <li>按主题创建资料卡片，内置简单的分类和排序，不需要额外建文件夹。</li>
+        <li>每条记录可以附带短描述和链接，避免只存一个标题然后忘记内容。</li>
+        <li>没有算法推荐或信息流，所有展示由你整理的资料决定。</li>
+        <li>文本为主，加载快，适合在网络条件一般的环境下使用。</li>
+      </ul>
+    </section>
+
+    <!-- 使用建议 + 强调色链接自然嵌入 -->
+    <section>
+      <h2 class="section-title">使用建议</h2>
+      <div class="highlight">
+        <p><strong>从最小单元开始</strong> — 先收录最近在玩的游戏资料，不追求全面。等整理顺手了再逐步补充旧内容。</p>
+        <p><strong>链接是资料的一部分</strong> — 比如在描述里直接引用<a href="https://officialapp-aiyouxi.com.cn" class="inline-link">爱游戏</a>作为资料来源，注明日期和版本，方便以后核对。</p>
+        <p><strong>定期回顾</strong> — 每个月花十分钟清理过期的参考链接或失效的页面，保持索引干净可靠。</p>
+      </div>
+    </section>
+
+    <!-- 场景示例 -->
+    <section>
+      <h2 class="section-title">常见使用场景</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>🎮 单机剧情向</h3>
+          <p>记录分支选项、收集品位置、NPC 对话差异。配合截图链接整理成专属流程笔记。</p>
+        </div>
+        <div class="card">
+          <h3>📚 系列作品考据</h3>
+          <p>对系列时间线、世界观文档、访谈译文进行索引，每一条都附上来源链接。</p>
+        </div>
+        <div class="card">
+          <h3>🔧 联机 / 更新追踪</h3>
+          <p>记录版本改动、活动日历、社区常用链接。适合需要经常查资料的轻度社群成员。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ 摘要 -->
+    <section>
+      <h2 class="section-title">常见疑问摘要</h2>
+      <div class="faq-item">
+        <strong>需要注册或安装吗？</strong>
+        <p>不需要。整个页面基于浏览器，所有资料整理操作都在当前界面完成，不涉及账户系统。</p>
+      </div>
+      <div class="faq-item">
+        <strong>数据存在哪里？</strong>
+        <p>主要依赖本地存储或你自己指定的网络位置。服务端不收集任何个人资料与索引内容。</p>
+      </div>
+      <div class="faq-item">
+        <strong>可以自己修改样式或结构吗？</strong>
+        <p>可以。页面基于标准 HTML/CSS，懂前端可以按自己习惯调整卡片布局、配色或增加新功能。</p>
+      </div>
+    </section>
+
+    <!-- 可信但克制的访问说明 -->
+    <section style="margin-top: 2.6rem;">
+      <h2 class="section-title" style="border-bottom-color: #c9b59d;">访问说明</h2>
+      <p style="color: #4a4742; max-width: 780px;">
+        本文档仅用于展示产品概念与整理思路。如果你对具体实现或使用方式感兴趣，可参考 
+        <a href="https://officialapp-aiyouxi.com.cn">爱游戏</a> 了解更完整的信息。
+        页面内不收集任何用户数据，也不提供付费订阅功能，请放心浏览。
+      </p>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footnote">
+      <p>
+        基于资料整理思路的页面示例 · 内容仅供参考 ·
+        <a href="https://officialapp-aiyouxi.com.cn">爱游戏</a>
+      </p>
+    </footer>
+
+  </main>
+
+</body>
+</html>
