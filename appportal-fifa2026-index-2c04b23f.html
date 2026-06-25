@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界杯 · 持续关注 · 故事页</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Georgia', 'Times New Roman', 'Songti SC', serif;
+            background-color: #f9f7f1;
+            color: #2d2a24;
+            line-height: 1.7;
+            padding: 2rem 1.5rem;
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        /* 开场 hero 区 — 短句叙事 */
+        .hero {
+            margin: 2.5rem 0 3rem 0;
+            border-left: 5px solid #c9b99a;
+            padding-left: 1.8rem;
+        }
+        .hero p:first-child {
+            font-size: 1.95rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            color: #3f392f;
+            margin-bottom: 0.4rem;
+        }
+        .hero p:first-child::before {
+            content: "✦ ";
+            color: #b89b6e;
+            font-size: 1.8rem;
+        }
+        .hero .sub {
+            font-size: 1rem;
+            color: #7a7163;
+            margin-top: 0.2rem;
+            font-style: italic;
+        }
+
+        /* 承接段落 */
+        .intro-text {
+            font-size: 1.05rem;
+            margin-bottom: 2.8rem;
+            text-align: justify;
+            padding: 0 0.2rem;
+        }
+        .intro-text strong {
+            font-weight: 600;
+            color: #5b4d38;
+        }
+        .intro-text a {
+            color: #8c6f4a;
+            text-decoration: none;
+            border-bottom: 1px dashed #c9b99a;
+            transition: border 0.15s ease;
+        }
+        .intro-text a:hover {
+            border-bottom: 2px solid #8c6f4a;
+        }
+
+        /* 引用块 / 提示框 — 温和强调 */
+        .notecard {
+            background-color: #f0ebe3;
+            padding: 1.6rem 2rem;
+            margin: 2.2rem 0 2.6rem 0;
+            border-radius: 12px 4px 12px 4px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            border-left: 4px solid #b89b6e;
+            color: #3a352d;
+        }
+        .notecard p {
+            margin-bottom: 0.6rem;
+        }
+        .notecard p:last-child {
+            margin-bottom: 0;
+        }
+        .notecard .label {
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #7b6b54;
+            margin-bottom: 0.5rem;
+        }
+
+        /* 特点列表 — 干净卡片式 */
+        .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem;
+            margin: 2.8rem 0 3rem 0;
+        }
+        .feature-item {
+            background: #ffffffd9;
+            backdrop-filter: blur(1px);
+            padding: 1rem 1.6rem;
+            border-radius: 30px 8px 8px 30px;
+            border: 1px solid #e2d9cb;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            display: flex;
+            align-items: baseline;
+            gap: 0.8rem;
+            transition: background 0.2s;
+        }
+        .feature-item:hover {
+            background: #f7f2ea;
+        }
+        .feature-item .num {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #b89b6e;
+            min-width: 2rem;
+            text-align: right;
+            font-feature-settings: "tnum";
+        }
+        .feature-item .desc {
+            flex: 1;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #3a342b;
+        }
+        .feature-item .desc strong {
+            color: #5b4d38;
+        }
+
+        /* 温和结尾 + 署名感 */
+        .closing {
+            margin: 3.2rem 0 2.5rem 0;
+            padding: 1.2rem 0 0.8rem 0;
+            border-top: 1px solid #dcd3c5;
+            text-align: right;
+            font-size: 0.95rem;
+            color: #7f7566;
+        }
+        .closing span {
+            background: #ede7dd;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            font-style: italic;
+            display: inline-block;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 600px) {
+            body { padding: 1.2rem 1rem; }
+            .hero p:first-child { font-size: 1.6rem; }
+            .hero { padding-left: 1rem; margin: 1.5rem 0 2rem 0; }
+            .feature-item {
+                border-radius: 20px 6px 6px 20px;
+                padding: 0.8rem 1.2rem;
+                flex-wrap: wrap;
+                gap: 0.3rem;
+            }
+            .feature-item .num { min-width: 1.5rem; }
+            .notecard { padding: 1.2rem 1.2rem; }
+        }
+        @media (min-width: 1200px) {
+            body { padding: 3rem 2rem; }
+        }
+
+        /* 小细节 — 装饰引用痕迹 */
+        .quote-inline {
+            background: #f4efe7;
+            padding: 0.1rem 0.4rem;
+            border-radius: 3px;
+            font-style: italic;
+            color: #5b4d38;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 开场短句：再次访问的邀请 -->
+    <div class="hero">
+        <p>你回来得正是时候。</p>
+        <p class="sub">—— 赛程、故事、数据，每一次访问都有新发现。</p>
+    </div>
+
+    <!-- 承接段落：持续关注与收藏的理由 -->
+    <div class="intro-text">
+        <p>对真正热爱足球的人来说，<strong>世界杯</strong>不只在赛事月沸腾。从预选赛抽签到决赛夜灯光熄灭，中间有数百个值得反复品味的瞬间。这也是为什么我们建议你把 <a href="https://appportal-fifa2026.com">世界杯</a> 加入浏览器收藏夹——不是因为它承诺什么，而是因为<strong>一个可靠的入口</strong>，能让所有关键信息始终触手可及。</p>
+        <p style="margin-top: 1.2rem;">门户本身不制造激情，但它保存时间线。当你再次打开，看到的不仅是即将到来的赛程，还有已经发生的轨迹：分组逻辑、球场档案、历史交锋……每一条都经过整理，不冗余，不煽情。简洁本身就是一种尊重。</p>
+    </div>
+
+    <!-- 提示框 / 引用块：收藏与回顾的温和提醒 -->
+    <div class="notecard">
+        <div class="label">📌 提示</div>
+        <p><strong>再次访问</strong> 时你会发现，页面结构没有花哨的变化，但内容始终保持同步。与其每次重新搜索，不如让同一个入口成为你的默认起点。</p>
+        <p style="margin-top: 0.8rem;">如果你曾收藏过这个地址，它依然在那里。如果没有，现在只需要一次点击——然后它就会一直等你。</p>
+    </div>
+
+    <!-- 特点列表：简洁高密度描述 (不重复“点击/进入”) -->
+    <div class="feature-list">
+        <div class="feature-item">
+            <span class="num">01</span>
+            <span class="desc"><strong>赛程时间轴</strong> · 从小组赛到决赛，日期、场地、时区一页展示，无需跳转多个平台。</span>
+        </div>
+        <div class="feature-item">
+            <span class="num">02</span>
+            <span class="desc"><strong>球队与球场档案</strong> · 每支参赛队伍的晋级路径、历史数据，以及每一座球场的容量与故事。</span>
+        </div>
+        <div class="feature-item">
+            <span class="num">03</span>
+            <span class="desc"><strong>规则与赛制说明</strong> · 抽签分档、淘汰赛对阵原则、小组出线规则——清晰直白，没有模糊表述。</span>
+        </div>
+        <div class="feature-item">
+            <span class="num">04</span>
+            <span class="desc"><strong>可追溯的版本</strong> · 页面更新会保留修正记录，你可以看到信息如何随时间完善。</span>
+        </div>
+    </div>
+
+    <!-- 温和结尾：从收藏到持续关注 -->
+    <div class="closing">
+        <span>一个入口，一条时间线。 <span style="font-style: normal; color: #b89b6e;">&nbsp;·&nbsp;</span> 下次再来，它仍在这里。</span>
+    </div>
+
+    <!-- 额外微段落：FAQ 摘要式的简短说明，以引用形式 -->
+    <div style="margin: 2rem 0 1rem 0; padding: 0.2rem 0; font-size: 0.96rem; color: #6d6558; border-bottom: 1px dashed #d4cabc; padding-bottom: 1.2rem;">
+        <p><span class="quote-inline">常见问题</span> 这个页面会一直更新吗？是的，赛程确认、场地变更、分组信息都会在 <a href="https://appportal-fifa2026.com" style="color: #8c6f4a; text-decoration: underline dotted;">世界杯</a> 门户同步。不需要反复检查，只需保持收藏。</p>
+    </div>
+
+    <!-- 非常克制的脚注 -->
+    <footer style="margin-top: 2.8rem; font-size: 0.8rem; color: #9c9282; border-top: 1px solid #e3dbcf; padding-top: 1rem; text-align: center;">
+        <span>内容仅供参考 · 以官方发布为准</span>
+    </footer>
+</body>
+</html>
