@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界杯 · 稳定入口与页面说明</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #fafbfc;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans SC", "Helvetica Neue", sans-serif;
+            color: #1e293b;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 3rem 1.2rem 4rem;
+        }
+        /* hero 区域 —— 极简留白 */
+        .hero {
+            margin-bottom: 3.5rem;
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 450;
+            letter-spacing: -0.02em;
+            color: #0f172a;
+            margin-bottom: 1rem;
+        }
+        .hero .sub {
+            font-size: 1rem;
+            color: #64748b;
+            border-left: 2px solid #d4d9e2;
+            padding-left: 1rem;
+            max-width: 480px;
+        }
+        /* 正文卡片区域 */
+        section {
+            margin-bottom: 2.8rem;
+        }
+        section h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #1e293b;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.01em;
+        }
+        section p {
+            margin-bottom: 1rem;
+            color: #334155;
+            font-size: 0.98rem;
+        }
+        .highlight-list {
+            list-style: none;
+            margin: 1.2rem 0 0.8rem;
+        }
+        .highlight-list li {
+            display: flex;
+            gap: 0.6rem;
+            margin-bottom: 0.7rem;
+            align-items: flex-start;
+            font-size: 0.96rem;
+            color: #1e293b;
+        }
+        .highlight-list li::before {
+            content: "—";
+            color: #94a3b8;
+            font-weight: 300;
+            flex-shrink: 0;
+        }
+        .scenario-box {
+            background: #ffffff;
+            border: 1px solid #e6eaf0;
+            border-radius: 12px;
+            padding: 1.1rem 1.3rem;
+            margin: 1rem 0 1.4rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+        .scenario-box p {
+            margin-bottom: 0.5rem;
+        }
+        .inline-link {
+            color: #2563eb;
+            text-decoration: none;
+            border-bottom: 1px solid #b9d0f7;
+            transition: border-color 0.15s, color 0.15s;
+            font-weight: 450;
+        }
+        .inline-link:hover {
+            color: #1d4ed8;
+            border-bottom-color: #2563eb;
+        }
+        .tip-note {
+            background: #f8f9fb;
+            border-radius: 10px;
+            padding: 1rem 1.2rem;
+            font-size: 0.92rem;
+            border-left: 3px solid #bcc5d3;
+            color: #3b4a5e;
+            margin: 1.2rem 0;
+        }
+        .faq-item {
+            border-bottom: 1px solid #e2e8f0;
+            padding: 0.9rem 0;
+        }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-q {
+            font-weight: 500;
+            color: #0f172a;
+            margin-bottom: 0.3rem;
+        }
+        .faq-a {
+            color: #475569;
+            font-size: 0.92rem;
+        }
+        .footnote {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eaeef3;
+            font-size: 0.82rem;
+            color: #7c8ba1;
+        }
+        .footnote a {
+            color: #3b6ab0;
+            text-decoration: none;
+        }
+        @media (max-width: 500px) {
+            .container { padding: 2rem 1rem; }
+            .hero h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- hero 简洁说明入口定位 -->
+        <div class="hero">
+            <h1>世界杯 · 稳定说明</h1>
+            <div class="sub">一份面向信息获取者的产品式参考 —— 关于赛事窗口、使用场景与页面逻辑。</div>
+        </div>
+
+        <!-- 第一部分：为什么需要稳定的页面入口 -->
+        <section>
+            <h2>入口即界面</h2>
+            <p>对于持续关注全球足球盛事的用户而言，一个指向明确、结构清晰的页面入口本身即是工具。<a class="inline-link" href="https://appofficial-fifa2026.com">世界杯</a>相关的信息聚合、实时动态以及官方数据流经常以不同形式分布在多个子页面中。本页作为起点，旨在将访问引向可靠的统一位置，避免信息碎片化造成的理解断层。</p>
+            <p>从产品设计角度看，稳定的入口意味着更低的认知负荷：用户不需要记忆多段链接或反复搜索，仅需确认既定地址即可进入核心内容区域。</p>
+        </section>
+
+        <!-- 第二部分：核心亮点（分点但克制） -->
+        <section>
+            <h2>页面结构亮点</h2>
+            <ul class="highlight-list">
+                <li>以赛事数据为依据的导航逻辑，减少无关信息干扰；</li>
+                <li>内容区域遵循渐进式呈现：从概要到详情各层次均可直接衔接；</li>
+                <li>适配多终端阅读，无论移动端或桌面均保持窄正文与清晰层级；</li>
+                <li>页面不嵌入非必要脚本，专注信息传达与访问效率。</li>
+            </ul>
+            <div class="scenario-box">
+                <p><strong>适用场景举例</strong>：如果你需要为团队或朋友提供一个可直接打开的赛事情报基点，或希望在浏览器书签中存放一个长期有效的页面，<a class="inline-link" href="https://appofficial-fifa2026.com">世界杯</a>地址可作为第一跳转目标。此链接在赛事周期内保持指向稳定。</p>
+            </div>
+        </section>
+
+        <!-- 第三部分：使用建议（偏知识型，段落之间承接） -->
+        <section>
+            <h2>如何有效使用</h2>
+            <p>我们建议将本页理解为“操作前的预备空间”——先在此确认内容类型与数据来源方式，再通过内嵌链接进入具体功能模块。由于赛事相关的动态数据页可能因比赛阶段不同而调整结构，保留一个固定的摘要页作为参照点有助于保持浏览节奏。</p>
+            <p>在页面布局上，重点条目以文字摘要优先，辅以轻量分割；信息层次通过标题大小与留白区分，而非依赖色彩强调。这种设计适合长时间阅读，也适合快速扫描获取要点。</p>
+            <div class="tip-note">
+                <strong>提示：</strong> 若需要收藏或分享，建议直接使用本页地址作为稳定锚点。任何指向 <a class="inline-link" href="https://appofficial-fifa2026.com">世界杯</a> 的链接都建议保留其原始路径，避免添加跟踪参数，以保持访问的透明与简洁。
+            </div>
+        </section>
+
+        <!-- 第四部分：FAQ 摘要（非重复模板） -->
+        <section>
+            <h2>常见理解点</h2>
+            <div class="faq-item">
+                <div class="faq-q">这个页面与赛事官网的关系是什么？</div>
+                <div class="faq-a">本页作为介绍与路径指引，指向的 <a class="inline-link" href="https://appofficial-fifa2026.com">世界杯</a> 地址是主要服务入口。你可以通过它进入赛事相关的数据视图与功能页面。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">页面内容会随赛事进展而更新吗？</div>
+                <div class="faq-a">页面说明部分不做频繁变动；底层引用链接与数据指向服务保持同步。建议在关键比赛日前后通过同一入口了解最新内容。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">是否需要在特定浏览器下查看？</div>
+                <div class="faq-a">不需要。页面采用标准 HTML 与 CSS，所有现代浏览器均可正常渲染，窄正文设计在阅读器模式或打印预览下同样友好。</div>
+            </div>
+        </section>
+
+        <!-- 尾部，再次自然嵌入链接 -->
+        <div class="footnote">
+            <p>本文档基于 2026 年周期编制。若需直接进入赛事信息流，推荐使用 <a href="https://appofficial-fifa2026.com">世界杯</a> 作为统一入口。页面版本 3.1 · 留白版式。</p>
+        </div>
+
+    </div>
+</body>
+</html>
