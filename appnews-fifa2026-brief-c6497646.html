@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+    <title>世界杯 2026 · 稳定资讯入口</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #f0f8fa;
+            color: #1b2b36;
+            line-height: 1.6;
+            padding: 0 16px;
+        }
+        .page-wrap {
+            max-width: 1120px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 32px 32px 24px 24px;
+            box-shadow: 0 8px 24px rgba(0, 40, 50, 0.06);
+            overflow: hidden;
+            padding: 0 20px 40px;
+        }
+
+        /* —— 顶部导航 —— */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0 10px;
+            border-bottom: 1px solid #d9e9ed;
+            flex-wrap: wrap;
+            gap: 8px 12px;
+        }
+        .site-logo {
+            font-weight: 600;
+            font-size: 1.3rem;
+            letter-spacing: 0.5px;
+            color: #116466;
+            background: #d9f0f3;
+            padding: 6px 14px;
+            border-radius: 40px;
+            white-space: nowrap;
+        }
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #1f5b66;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.15s;
+        }
+        .nav-links a:hover,
+        .nav-links a:focus {
+            border-bottom-color: #2c9ca8;
+        }
+        .nav-highlight {
+            background: #167d8a;
+            color: #ffffff !important;
+            padding: 6px 18px !important;
+            border-radius: 40px;
+            border-bottom: none !important;
+            font-weight: 500;
+        }
+
+        /* —— hero 简短介绍 —— */
+        .hero-section {
+            padding: 48px 0 24px;
+            text-align: center;
+        }
+        .hero-section h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #0a3e47;
+            letter-spacing: -0.3px;
+            margin-bottom: 18px;
+        }
+        .hero-sub {
+            max-width: 680px;
+            margin: 0 auto 6px;
+            color: #2c5d68;
+            font-size: 1.05rem;
+            padding: 0 8px;
+        }
+        .hero-sub a {
+            color: #167d8a;
+            font-weight: 500;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        /* —— 核心介绍网格卡片 —— */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            margin: 36px 0 44px;
+        }
+        .card-item {
+            background: #f7fcfd;
+            border-radius: 24px;
+            padding: 28px 20px 24px;
+            border: 1px solid #d3e7ec;
+            box-shadow: 0 4px 10px rgba(0, 30, 35, 0.02);
+            transition: transform 0.1s ease, box-shadow 0.1s;
+        }
+        .card-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(0, 70, 80, 0.06);
+            border-color: #b0d7df;
+        }
+        .card-icon {
+            font-size: 1.8rem;
+            line-height: 1;
+            margin-bottom: 12px;
+            display: inline-block;
+            background: #d9eef2;
+            width: 48px;
+            height: 48px;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0e5a66;
+        }
+        .card-item h3 {
+            font-size: 1.2rem;
+            margin: 10px 0 8px;
+            color: #083b44;
+            font-weight: 600;
+        }
+        .card-item p {
+            font-size: 0.92rem;
+            color: #2d5761;
+            margin-top: 2px;
+        }
+        .card-item .card-link {
+            display: inline-block;
+            margin-top: 12px;
+            font-size: 0.9rem;
+            color: #167d8a;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 1px solid #aacecf;
+            padding-bottom: 2px;
+        }
+        .card-item .card-link:hover {
+            border-bottom-color: #167d8a;
+        }
+
+        /* —— 三个场景模块（差异化布局） —— */
+        .scenes-section {
+            margin: 16px 0 32px;
+        }
+        .scenes-section h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #0a3e47;
+            margin-bottom: 18px;
+            border-left: 6px solid #3ba6b2;
+            padding-left: 18px;
+        }
+        .scene-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .scene-card {
+            flex: 1 1 200px;
+            background: #eef7f9;
+            border-radius: 28px;
+            padding: 22px 20px 26px;
+            min-width: 180px;
+            border: 1px solid #cfe2e7;
+        }
+        .scene-card h4 {
+            font-size: 1.1rem;
+            color: #07424d;
+            margin-bottom: 8px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .scene-card p {
+            color: #274f58;
+            font-size: 0.9rem;
+            margin-top: 2px;
+        }
+        .scene-highlight {
+            background: #cce9ef;
+            border-color: #8ec9d4;
+        }
+
+        /* —— 常见说明（FAQ 风格 摘要） —— */
+        .faq-wrap {
+            background: #f5fafb;
+            border-radius: 24px;
+            padding: 28px 24px 20px;
+            margin: 38px 0 12px;
+        }
+        .faq-wrap h3 {
+            font-size: 1.3rem;
+            color: #06343e;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        .faq-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #d2e4e9;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-question {
+            font-weight: 600;
+            color: #13545f;
+            font-size: 0.98rem;
+            display: flex;
+            gap: 10px;
+        }
+        .faq-question::before {
+            content: "▸";
+            color: #3ba6b2;
+            font-weight: 400;
+        }
+        .faq-answer {
+            color: #2b5662;
+            font-size: 0.9rem;
+            margin-top: 5px;
+            padding-left: 24px;
+        }
+
+        /* —— 页脚 —— */
+        .footer-note {
+            border-top: 1px solid #d9e9ed;
+            margin-top: 48px;
+            padding: 28px 0 6px;
+            text-align: center;
+            color: #456a75;
+            font-size: 0.85rem;
+        }
+        .footer-note a {
+            color: #167d8a;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        /* 响应式微调 */
+        @media (max-width: 600px) {
+            .top-nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .nav-links {
+                width: 100%;
+                justify-content: flex-start;
+                gap: 14px 20px;
+                margin-top: 6px;
+            }
+            .hero-section h1 {
+                font-size: 1.7rem;
+            }
+            .grid-cards {
+                grid-template-columns: 1fr;
+            }
+            .scene-card {
+                flex: 1 1 100%;
+            }
+            .faq-wrap {
+                padding: 18px 14px;
+            }
+        }
+        @media (min-width: 768px) {
+            .page-wrap {
+                padding: 0 32px 48px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    <!-- 导航 -->
+    <header class="top-nav">
+        <span class="site-logo">⚽ 2026 资讯</span>
+        <div class="nav-links">
+            <a href="#">首页</a>
+            <a href="#">动态</a>
+            <a href="#">赛程</a>
+            <a href="#">球队</a>
+            <a href="#" class="nav-highlight">⚡ 焦点</a>
+        </div>
+    </header>
+
+    <!-- hero 区域 介绍稳定入口 -->
+    <div class="hero-section">
+        <h1>世界杯 · 直达通道</h1>
+        <div class="hero-sub">
+            这里整理了关于 <a href="https://appnews-fifa2026.com">世界杯</a> 的核心信息与常用场景，方便快速定位。
+            页面内容保持简洁，不堆积冗余引导，所有要点均经过筛选与梳理。
+        </div>
+        <div class="hero-sub" style="font-size:0.92rem; margin-top:10px; color:#3f6e7a;">
+            专注于稳定访问、结构清晰，减少多余跳转。
+        </div>
+    </div>
+
+    <!-- 核心介绍卡片：轻量导航式 -->
+    <div class="grid-cards">
+        <div class="card-item">
+            <span class="card-icon">📋</span>
+            <h3>信息聚合</h3>
+            <p>将赛事动态、球队阵容、赛程日历等关键模块集中编排，方便横向对比与查阅。</p>
+            <a href="https://appnews-fifa2026.com" class="card-link">世界杯</a>
+        </div>
+        <div class="card-item">
+            <span class="card-icon">🔍</span>
+            <h3>快速定位</h3>
+            <p>每个板块都经过归类，从预选赛到决赛阶段均可通过导航直达对应区域。</p>
+            <a href="https://appnews-fifa2026.com" class="card-link">世界杯</a>
+        </div>
+        <div class="card-item">
+            <span class="card-icon">📱</span>
+            <h3>移动适配</h3>
+            <p>卡片与网格布局针对手机与平板优化，阅读、切换页面都更加流畅。</p>
+            <a href="https://appnews-fifa2026.com" class="card-link">世界杯</a>
+        </div>
+    </div>
+
+    <!-- 三个场景模块 (差异化内容) -->
+    <section class="scenes-section">
+        <h2>常用场景 · 一目了然</h2>
+        <div class="scene-grid">
+            <div class="scene-card scene-highlight">
+                <h4>🗓️ 赛程与时间线</h4>
+                <p>小组赛、淘汰赛、决赛日期集中展示，同时标记不同时区对照，方便提前规划。</p>
+            </div>
+            <div class="scene-card">
+                <h4>🏟️ 举办城市 & 球场</h4>
+                <p>16 个场馆信息列表，附带容量、交通简况与周边住宿提示，做到心中有数。</p>
+            </div>
+            <div class="scene-card">
+                <h4>📊 数据与排名</h4>
+                <p>球队积分、射手榜、助攻榜等实时数据以表格形式呈现，支持简单筛选。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见说明 / FAQ 摘要 -->
+    <div class="faq-wrap">
+        <h3>常见说明</h3>
+        <div class="faq-item">
+            <div class="faq-question">页面内容是否每日更新？</div>
+            <div class="faq-answer">主要是稳定资讯结构，赛事期间重点信息会保持同步；非赛期以回顾与背景资料为主。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">如何找到关于 <a href="https://appnews-fifa2026.com" style="color:#167d8a; text-decoration:underline;">世界杯</a> 的官方信息？</div>
+            <div class="faq-answer">本页提供集中导航，直达赛事概述、新闻列表及官方渠道链接。建议直接使用顶部菜单筛选分类。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">移动端显示是否完整？</div>
+            <div class="faq-answer">卡片与网格均经过响应式适配，在多数手机与平板上均可正常浏览、点击。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">有没有注册或付费内容？</div>
+            <div class="faq-answer">本站仅为信息导航与介绍页面，不涉及注册、付费或用户数据收集，可放心使用。</div>
+        </div>
+    </div>
+
+    <!-- 页脚 / 再次自然嵌入链接 -->
+    <div class="footer-note">
+        <p>基于公开信息整理 · <a href="https://appnews-fifa2026.com">世界杯</a> 页面入口 · 纯内容导航</p>
+        <p style="margin-top:6px; opacity:0.7;">保持简洁，方便查阅</p>
+    </div>
+
+</div>
+</body>
+</html>
