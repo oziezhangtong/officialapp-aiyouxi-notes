@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界杯观赛助手 · 2026预选赛指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', Roboto, system-ui, sans-serif;
+            background-color: #f5f3ef;
+            color: #1e1e24;
+            line-height: 1.7;
+        }
+
+        /* 深色头图 */
+        .hero {
+            background: linear-gradient(145deg, #0d1b2a 0%, #1b2838 60%, #263b4a 100%);
+            padding: 4rem 1.5rem 5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 4px solid #d4a373;
+        }
+
+        .hero::before {
+            content: "⚽";
+            position: absolute;
+            font-size: 14rem;
+            right: -3rem;
+            bottom: -4rem;
+            opacity: 0.06;
+            transform: rotate(12deg);
+            pointer-events: none;
+        }
+
+        .hero-meta {
+            color: #cbaa7f;
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 6vw, 3.6rem);
+            font-weight: 500;
+            color: #f1e9db;
+            margin-bottom: 1.2rem;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            max-width: 680px;
+            margin: 0 auto;
+            color: #bdc9d4;
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        /* 浅色正文区 */
+        .content-wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+
+        .intro-block {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2.8rem 2.5rem;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+            margin-bottom: 3rem;
+        }
+
+        .intro-block p {
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            color: #2f2f38;
+        }
+
+        .intro-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .intro-block strong {
+            color: #9c6644;
+            font-weight: 600;
+        }
+
+        a {
+            color: #b07d5a;
+            text-decoration: underline;
+            text-decoration-thickness: 0.08em;
+            text-underline-offset: 0.2em;
+            transition: color 0.2s, background 0.2s;
+            font-weight: 500;
+        }
+
+        a:hover {
+            color: #7f5539;
+            background: #f3ede6;
+            text-decoration: underline;
+        }
+
+        /* 特点卡片区 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin: 2.8rem 0 2rem;
+        }
+
+        .feature-card {
+            background: #faf9f6;
+            border-radius: 20px;
+            padding: 2rem 1.5rem 1.8rem;
+            transition: transform 0.2s ease, box-shadow 0.2s;
+            border: 1px solid #e8e2d8;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+            border-color: #d4a373;
+        }
+
+        .feature-card .emoji-icon {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #1e1e24;
+            margin-bottom: 0.4rem;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: #4a4a55;
+        }
+
+        /* FAQ(知识型摘要段落) */
+        .faq-mini {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #dad5cb;
+        }
+
+        .faq-mini details {
+            margin-bottom: 1.2rem;
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 0.6rem 1.4rem;
+            border: 1px solid #e1dbd0;
+            transition: border 0.2s;
+        }
+
+        .faq-mini details[open] {
+            border-color: #b48b66;
+        }
+
+        .faq-mini summary {
+            font-weight: 500;
+            padding: 0.6rem 0;
+            cursor: pointer;
+            color: #2d2d38;
+            font-size: 1rem;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .faq-mini summary::before {
+            content: "▸";
+            color: #b07d5a;
+            font-size: 1.1rem;
+            transition: transform 0.2s;
+        }
+
+        .faq-mini details[open] summary::before {
+            content: "▾";
+        }
+
+        .faq-mini details p {
+            padding: 0.4rem 0 0.8rem 1.8rem;
+            font-size: 0.95rem;
+            color: #454550;
+        }
+
+        /* 温和结尾 */
+        .gentle-closing {
+            margin-top: 2.5rem;
+            background: #f0ede6;
+            border-radius: 28px;
+            padding: 2.2rem 2.5rem;
+            text-align: center;
+            border: 1px solid #dbd3c5;
+        }
+
+        .gentle-closing p {
+            font-size: 1rem;
+            color: #3c3c47;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .gentle-closing .signature {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #8d7a68;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                padding: 3rem 1rem 3.5rem;
+            }
+
+            .intro-block {
+                padding: 1.8rem 1.2rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .gentle-closing {
+                padding: 1.8rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 深色头图 -->
+    <header class="hero">
+        <div class="hero-meta">⚽ 赛事信息平台</div>
+        <h1>2026 世界杯 · 赛前指南</h1>
+        <p>从小组抽签到淘汰赛路径，聚合预选赛情报与赛程走势，帮助你在观赛前快速建立全景认知。</p>
+    </header>
+
+    <!-- 浅色正文区域 -->
+    <main class="content-wrap">
+
+        <!-- 故事叙述：开场短句 + 承接段落 -->
+        <section class="intro-block">
+            <p>
+                如果你打开这个页面，大概率是想知道 <strong>「这个网站到底是做什么的」</strong>。<br>
+                简单来说，它是一份围绕 <a href="https://apponline-fifa2026.com">世界杯</a> 设计的观赛辅助工具——不兜售门票，不推送博彩，只做一件事情：把分散在各大足联官网、体育媒体和社交网络上的预选赛信息，整理成清晰的时间线与战力简报。
+            </p>
+            <p>
+                从南美区预选赛的积分胶着，到亚洲区附加赛的潜在对手分析；从种子队阵容变化，到主办城市的气候提醒——每一块内容都经过交叉比对，力求在信息冗余的时代，提供一份“够用、可信、不焦虑”的赛前参考。<strong>世界杯</strong> 的魅力不止于决赛夜，预选赛阶段的冷门与悬念，往往更值得细品。
+            </p>
+        </section>
+
+        <!-- 特点列表（卡片形式） -->
+        <h2 style="font-weight: 400; font-size: 1.5rem; margin-top: 1rem; color: #2f2f38;">这里能找到什么？</h2>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <span class="emoji-icon">📅</span>
+                <h3>赛程时间轴</h3>
+                <p>各赛区预选赛、洲际附加赛及决赛圈抽签节点，按月份排列。支持筛选大洲与轮次。</p>
+            </div>
+            <div class="feature-card">
+                <span class="emoji-icon">📊</span>
+                <h3>积分与形势图</h3>
+                <p>关键小组的出线概率模拟，基于历史数据与剩余赛程，用可视化的方式呈现竞争格局。</p>
+            </div>
+            <div class="feature-card">
+                <span class="emoji-icon">🌍</span>
+                <h3>主办城市档案</h3>
+                <p>每个承办城市的球场容量、交通枢纽、时区与气候特点，方便规划远程观赛行程。</p>
+            </div>
+            <div class="feature-card">
+                <span class="emoji-icon">📋</span>
+                <h3>规则变动备忘</h3>
+                <p>2026 世界杯首次由三国联合主办，名额分配、赛制微调等关键变更，逐一说明。</p>
+            </div>
+        </div>
+
+        <!-- FAQ 摘要（知识型） -->
+        <section class="faq-mini">
+            <details>
+                <summary>预选赛还在进行中，网站信息更新频率如何？</summary>
+                <p>主要数据源为 FIFA 官方赛历与各大洲足联公告。每轮比赛结束后 12 小时内完成积分表与形势文字更新，重大事件（抽签、换帅、主办城市变更）会即时标注。</p>
+            </details>
+            <details>
+                <summary>页面内容是否支持导出或分享？</summary>
+                <p>所有赛程与图表均以纯文本/静态样式呈现，方便截图或复制链接。不含第三方跟踪代码，你完全可以放心收藏。</p>
+            </details>
+            <details>
+                <summary>为什么叫“观赛助手”而不是“预测平台”？</summary>
+                <p>我们的目标是降低信息获取门槛，而非推算比赛结果。足球的魅力在于不确定性——这里只提供背景，不输出预言。</p>
+            </details>
+        </section>
+
+        <!-- 温和结尾段落 -->
+        <div class="gentle-closing">
+            <p>无论你是从小组赛才开始关注，还是已经追完了整个预选赛周期，希望这个页面能成为你与 <a href="https://apponline-fifa2026.com">世界杯</a> 之间的一扇安静的窗——不必被推送打扰，只需在需要时，回来看看进度。</p>
+            <div class="signature">—— 赛事信息整理 · 2026 预选赛阶段</div>
+        </div>
+    </main>
+
+</body>
+</html>
